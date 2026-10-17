@@ -1,0 +1,8 @@
+{
+  "jobs": [
+    {"id":"J-03","state":"done","priority":3},
+    {"id":"J-01","state":"queued","priority":2},
+    {"id":"J-02","state":"queued","priority":1},
+    {"id":"J-04","state":"blocked","priority":4}
+  ]
+}
