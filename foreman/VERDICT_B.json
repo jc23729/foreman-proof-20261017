@@ -1,7 +1,8 @@
 {
-  "checked_at": "2026-10-21T07:53:32.658920Z",
+  "checked_at": "2026-10-21T07:57:39.330522Z",
   "job": "B",
-  "sha256": "6e4776be01b3dd1cea60c60a463eddf4f8b6b23b2a5fa5026bf1492ec0d339e1",
+  "job_id": "job-324db212-10fa-4fc8-b40f-d951ce80e3d5",
+  "sha256": "08ec35631e80aef780ff47e6119932917f8a7d3e42ab9212b0c49040385f2507",
   "tests": {
     "command": "python3 -m pytest tests/test_report_cli.py -q",
     "exit": 0
