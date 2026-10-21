@@ -1,0 +1,7 @@
+{
+  "decision_version": 1,
+  "goal_id": "goal-autonomy-c2",
+  "chosen": "C3",
+  "reason": "CSV input expands supported job sources while reusing the existing summarizer and the verified text, JSON, and Markdown renderers without changing their output contracts.",
+  "decided_at": "2026-10-21T13:18:06.886Z"
+}
