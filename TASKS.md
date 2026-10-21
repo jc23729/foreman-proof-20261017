@@ -17,5 +17,12 @@ Total: N | Done: N | Running: N | Queued: N | Blocked: N
 Next: JOB_ID (or Next: none).
 Make no file changes when reading or reporting. Handle bad input with a nonzero exit and a short error. Pass tests/test_report_cli.py.
 
+## Queue C — follow-on work
+
+C1, C2 and C3 are defined in `CONTRACTS/C1.md`, `CONTRACTS/C2.md` and
+`CONTRACTS/C3.md`, and selected from `queue/NEXT.json`. The protocol is
+`FOREMAN_PROTOCOL.md` v2. Each contract names its acceptance tests; the worker
+may change only `report_cli.py`, and no test file may be edited.
+
 ## Finish criteria
 Both jobs have actual source files, independent acceptance, all tests green and automatic A -> B worker dispatch proven by the manager's session records. Do not call two jobs done just because one manager writes both in a single answer, or because a prompt was prepared. No push/PR/merge/deploy required after the first repository setup.
