@@ -13,6 +13,7 @@ from job_report import summarize_jobs
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", required=True, help="JSON file containing jobs")
+    parser.add_argument("--json", action="store_true", help="emit a JSON summary")
     args = parser.parse_args()
 
     try:
@@ -24,6 +25,13 @@ def main():
     except (OSError, UnicodeError, ValueError, RecursionError) as exc:
         print(f"Error: {exc}", file=sys.stderr)
         return 1
+
+    if args.json:
+        print(json.dumps({
+            key: summary[key]
+            for key in ("total", "done", "running", "queued", "blocked", "next_queued")
+        }))
+        return 0
 
     print("# Job Status")
     print(
