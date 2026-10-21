@@ -1,0 +1,10 @@
+{
+  "completed": true,
+  "goal_id": "goal-autonomy-harness1",
+  "jobs": {
+    "A": "ACCEPTED"
+  },
+  "report_version": 1,
+  "reported_at": "2026-10-21T12:53:15.692016Z",
+  "summary": "Single-job harness path completed with independent verification."
+}
