@@ -1,7 +1,0 @@
-{
-  "report_version": 1,
-  "goal_id": "goal-autonomy-c1",
-  "completed": true,
-  "jobs": {"A": "ACCEPTED"},
-  "summary": "Job A's authorized report_cli.py adds --json, was independently verified against the executor SHA-256 with all four C1 acceptance/regression tests and seven summarizer tests passing plus CLI/no-runtime-write checks, and was committed and pushed; existing Ruff E402 and mypy job_report.py typing findings are unchanged."
-}
