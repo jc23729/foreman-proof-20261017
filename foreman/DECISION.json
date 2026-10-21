@@ -1,0 +1,7 @@
+{
+  "chosen": "C2",
+  "decided_at": "2026-10-21T12:53:17.464245Z",
+  "decision_version": 1,
+  "goal_id": "goal-autonomy-harness1",
+  "reason": "Markdown output is the next queued contract and needs no new input format."
+}
