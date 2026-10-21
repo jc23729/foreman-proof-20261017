@@ -1,0 +1,10 @@
+{
+  "report_version": 1,
+  "goal_id": "goal-autonomy-20261021",
+  "completed": true,
+  "jobs": {
+    "A": "ACCEPTED",
+    "B": "ACCEPTED"
+  },
+  "summary": "codex-contabo completed A then automatically dispatched B after the foreman\u2019s pushed A verdict; both exact job IDs and source hashes were independently verified and all 9 acceptance tests passed."
+}

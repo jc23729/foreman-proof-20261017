@@ -1,0 +1,189 @@
+{
+  "proof_version": 1,
+  "goal_id": "goal-autonomy-20261021",
+  "session": "https://app.devin.ai/sessions/b0b2a313dcd3496db5618905db409081",
+  "recorded_at": "2026-10-21T08:05:26.599838Z",
+  "baseline_commit": "7fc6fbd7b8b1897b797d4d4df4795dca206f6486",
+  "plan_commit": "59d61415a610138648ff00cb2d6f9ca9a8c7632c",
+  "jobs": {
+    "A": {
+      "job_id": "job-f73c2565-a379-45b3-a0a2-1b6bea3919c5",
+      "authorized_worker": "codex-contabo",
+      "source": "job_report.py",
+      "sha256": "c4662b9c1ca46f70fa2187398ca583af3388f482d8e61127a6a7feb692009c28",
+      "source_matches_existing_baseline": true,
+      "test_file": "tests/test_job_report.py",
+      "test_file_sha256": "1d2e3f81ea6cd6d74967d67852318ef658f6901746e8a819de30e2a2a5c8402d",
+      "tests": {
+        "command": "python3 -m pytest tests/test_job_report.py -q",
+        "exit": 0
+      },
+      "checked_at": "2026-10-21T08:02:22.712016Z",
+      "verdict_commit": "5c5453e2234487db783cbd729729c87997177346"
+    },
+    "B": {
+      "job_id": "job-01bbcd50-815f-46fa-bd42-0dacb9722f67",
+      "authorized_worker": "codex-contabo",
+      "source": "report_cli.py",
+      "sha256": "08ec35631e80aef780ff47e6119932917f8a7d3e42ab9212b0c49040385f2507",
+      "source_matches_existing_baseline": true,
+      "test_file": "tests/test_report_cli.py",
+      "test_file_sha256": "08e741eaec5bc634b65b2f5bc7ce884330ebe51110ec987b03ee063d6449c9a8",
+      "tests": {
+        "command": "python3 -m pytest tests/test_report_cli.py -q",
+        "exit": 0
+      },
+      "checked_at": "2026-10-21T08:04:09.391364Z",
+      "verdict_commit": "e175a55db787d0227dd2d3397d31cb39bdd78bc8"
+    }
+  },
+  "source_handling": "Foreman copied only the exact accepted state-feed source bytes and did not author or modify either worker-owned source file; both returned sources match the pre-run repository baseline.",
+  "a_to_b_timeline": [
+    {
+      "observed_at": "2026-10-21T08:00:15.785938Z",
+      "job_a": {
+        "job_id": "job-f73c2565-a379-45b3-a0a2-1b6bea3919c5",
+        "status": "LEASED",
+        "attempts": 1,
+        "independently_verified": false
+      },
+      "job_b": null,
+      "verdict_a_seen": false,
+      "verdict_b_seen": false
+    },
+    {
+      "observed_at": "2026-10-21T08:00:58.111428Z",
+      "job_a": {
+        "job_id": "job-f73c2565-a379-45b3-a0a2-1b6bea3919c5",
+        "status": "LEASED",
+        "attempts": 2,
+        "independently_verified": false
+      },
+      "job_b": null,
+      "verdict_a_seen": false,
+      "verdict_b_seen": false
+    },
+    {
+      "observed_at": "2026-10-21T08:01:51.003239Z",
+      "job_a": {
+        "job_id": "job-f73c2565-a379-45b3-a0a2-1b6bea3919c5",
+        "status": "ACCEPTED",
+        "attempts": 2,
+        "independently_verified": false
+      },
+      "job_b": null,
+      "verdict_a_seen": false,
+      "verdict_b_seen": false
+    },
+    {
+      "observed_at": "2026-10-21T08:02:54.640893Z",
+      "job_a": {
+        "job_id": "job-f73c2565-a379-45b3-a0a2-1b6bea3919c5",
+        "status": "ACCEPTED",
+        "attempts": 2,
+        "independently_verified": true
+      },
+      "job_b": {
+        "job_id": "job-01bbcd50-815f-46fa-bd42-0dacb9722f67",
+        "status": "LEASED",
+        "attempts": 1,
+        "independently_verified": false
+      },
+      "verdict_a_seen": true,
+      "verdict_b_seen": false
+    },
+    {
+      "observed_at": "2026-10-21T08:03:36.882140Z",
+      "job_a": {
+        "job_id": "job-f73c2565-a379-45b3-a0a2-1b6bea3919c5",
+        "status": "ACCEPTED",
+        "attempts": 2,
+        "independently_verified": true
+      },
+      "job_b": {
+        "job_id": "job-01bbcd50-815f-46fa-bd42-0dacb9722f67",
+        "status": "ACCEPTED",
+        "attempts": 1,
+        "independently_verified": false
+      },
+      "verdict_a_seen": true,
+      "verdict_b_seen": false
+    },
+    {
+      "observed_at": "2026-10-21T08:04:40.477835Z",
+      "job_a": {
+        "job_id": "job-f73c2565-a379-45b3-a0a2-1b6bea3919c5",
+        "status": "ACCEPTED",
+        "attempts": 2,
+        "independently_verified": true
+      },
+      "job_b": {
+        "job_id": "job-01bbcd50-815f-46fa-bd42-0dacb9722f67",
+        "status": "ACCEPTED",
+        "attempts": 1,
+        "independently_verified": true
+      },
+      "verdict_a_seen": true,
+      "verdict_b_seen": true
+    }
+  ],
+  "control_plane_gates_after_verdicts": {
+    "decision_valid": false,
+    "goal_received": true,
+    "job_a_accepted_by_control_plane": true,
+    "job_a_dispatched": true,
+    "job_a_verified_by_foreman": true,
+    "job_b_accepted_by_control_plane": true,
+    "job_b_auto_dispatched": true,
+    "job_b_verified_by_foreman": true,
+    "plan_valid": true,
+    "report_present": false
+  },
+  "state_feed_generated_at": "2026-10-21T08:04:40.477835Z",
+  "state_feed_chain": {
+    "msg": "ok",
+    "ok": true,
+    "receipts": 115
+  },
+  "additional_checks": {
+    "python_executable": "/home/ubuntu/.pyenv/versions/3.12.13/bin/python3",
+    "checks": [
+      {
+        "command": "python3 -m pytest tests/ -q",
+        "exit": 0,
+        "output": ".........                                                                [100%]\n9 passed in 0.07s\n",
+        "checked_at": "2026-10-21T08:04:11.143157Z"
+      },
+      {
+        "command": "python3 -m ruff check job_report.py report_cli.py",
+        "exit": 1,
+        "output": "E402 Module level import not at top of file\n  --> report_cli.py:10:1\n   |\n 8 | sys.dont_write_bytecode = True\n 9 |\n10 | from job_report import summarize_jobs\n   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n   |\n\nFound 1 error.\n",
+        "checked_at": "2026-10-21T08:04:11.195237Z"
+      },
+      {
+        "command": "python3 -m mypy --check-untyped-defs job_report.py report_cli.py",
+        "exit": 1,
+        "output": "job_report.py:14: error: No overload variant of \"update\" of \"MutableMapping\" matches argument types \"int\", \"None\"  [call-overload]\njob_report.py:14: note: Possible overload variants:\njob_report.py:14: note:     def update(self, SupportsKeysAndGetItem[str, int], /) -> None\njob_report.py:14: note:     def update(self, SupportsKeysAndGetItem[str, int], /, **kwargs: int) -> None\njob_report.py:14: note:     def update(self, Iterable[tuple[str, int]], /) -> None\njob_report.py:14: note:     def update(self, Iterable[tuple[str, int]], /, **kwargs: int) -> None\njob_report.py:14: note:     def update(self, **kwargs: int) -> None\nFound 1 error in 1 file (checked 2 source files)\n",
+        "checked_at": "2026-10-21T08:04:12.222404Z"
+      }
+    ]
+  },
+  "cli_check": {
+    "command": "python3 report_cli.py --input tests/fixtures/jobs.json",
+    "exit": 0,
+    "output": "# Job Status\nTotal: 4 | Done: 1 | Running: 0 | Queued: 2 | Blocked: 1\nNext: J-02\n",
+    "no_repository_file_changes": true
+  },
+  "quality_findings": [
+    "ruff E402 at report_cli.py:10: summarize_jobs is imported after sys.dont_write_bytecode is set.",
+    "mypy call-overload at job_report.py:14: inferred integer-valued dictionary is updated with next_queued=None."
+  ],
+  "quality_findings_disposition": "Reported without editing authorized worker code; these checks are not gates in FOREMAN_PROTOCOL.md.",
+  "scheduled_check_or_restart": {
+    "feed_polling": "Periodic state-feed polls observed plan consumption, A acceptance, pushed verdict A acknowledgment, automatic B dispatch, B acceptance, and pushed verdict B acknowledgment.",
+    "poll_interval_seconds": 20,
+    "scheduled_check_tested": false,
+    "restart_tested": false,
+    "limitation": "No separate scheduler or restart operation was exercised or claimed; only the protocol-authorized state feed and git handoffs were used."
+  }
+}
