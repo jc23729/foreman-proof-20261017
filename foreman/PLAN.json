@@ -1,0 +1,19 @@
+{
+  "plan_version": 1,
+  "goal_id": "goal-autonomy-c1",
+  "foreman": "devin-cloud",
+  "job_a": {
+    "id": "A",
+    "kind": "repo_task",
+    "worker": "codex-contabo",
+    "spec": {
+      "expected_file": "report_cli.py",
+      "test_path": "tests/test_report_json.py",
+      "also_test": ["tests/test_report_cli.py"],
+      "task": "Implement CONTRACTS/C1.md by changing only report_cli.py. Add --json to emit exactly one JSON object with exactly total, done, running, queued, blocked, next_queued; use the summarizer's highest-priority queued id or null if none. For tests/fixtures/jobs.json the parsed object must equal {\"total\":4,\"done\":1,\"running\":0,\"queued\":2,\"blocked\":1,\"next_queued\":\"J-02\"}. Successful JSON output exits 0 with no additional stdout. Invalid input must exit nonzero, print a short stderr message, and leave stdout empty. Preserve default text output and error behavior. Keep job_report.py byte-identical; do not modify tests/ or queue/NEXT.json, add dependencies, or write files at runtime (preserve bytecode suppression). Run python3 -m pytest tests/test_report_json.py tests/test_report_cli.py -q."
+    }
+  },
+  "job_b": null,
+  "launch_b_when": "verdict_a_verified",
+  "choose_next_from": "queue/NEXT.json"
+}
