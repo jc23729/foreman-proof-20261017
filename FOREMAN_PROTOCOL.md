@@ -55,14 +55,16 @@ When `state.json` shows `job_a.status == "ACCEPTED"`:
 4. Push `foreman/VERDICT_A.json`:
 
 ```json
-{"verdict_version":1,"job":"A","verified":true,
+{"verdict_version":1,"job":"A","job_id":"<state.json job_a.job_id>","verified":true,
  "sha256":"<your computed sha256>",
  "tests":{"command":"python3 -m pytest tests/test_job_report.py -q","exit":0},
  "checked_at":"<utc>"}
 ```
 
 Your verdict is causally required: Job B is not dispatched unless your verdict
-says `verified: true` and your sha256 matches the executor's own computation.
+says `verified: true`, carries the exact `job_id` from the state feed, and your
+sha256 matches the executor's own computation. A verdict for a different job is
+refused even if the file hash happens to match.
 
 ## Step 3 — verify Job B yourself
 
