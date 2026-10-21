@@ -1,7 +1,7 @@
 {
   "choose_next_from": "queue/NEXT.json",
-  "foreman": "synthetic-harness-test",
-  "goal_id": "goal-autonomy-dryrun",
+  "foreman": "recovery-test",
+  "goal_id": "goal-autonomy-recovery",
   "job_a": {
     "id": "A",
     "kind": "repo_task",
