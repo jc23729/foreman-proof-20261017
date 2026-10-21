@@ -1,0 +1,6 @@
+{
+  "decision_version": 1,
+  "chosen": "C1",
+  "reason": "Add the --json output flag next: machine-readable output enables downstream integration while reusing the independently accepted summarizer and existing JSON input, without expanding input-format scope.",
+  "decided_at": "2026-10-21T08:05:28.054152Z"
+}
