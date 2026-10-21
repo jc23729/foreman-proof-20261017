@@ -1,0 +1,7 @@
+{
+  "decision_version": 1,
+  "goal_id": "goal-autonomy-c1",
+  "chosen": "C2",
+  "reason": "C2 adds human-readable Markdown reporting for chat surfaces alongside C1's machine-readable JSON, reusing the validated summary and existing input format without the broader CSV parsing scope of C3.",
+  "decided_at": "2026-10-21T13:13:44Z"
+}
