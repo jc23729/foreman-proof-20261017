@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-10-21T07:52:23.615931Z",
+  "job": "A",
+  "sha256": "d62a098ef567826c6bfde5034af83e6c9d00ff1e5fd880f7b9bde3deb7d26f42",
+  "tests": {
+    "command": "python3 -m pytest tests/test_job_report.py -q",
+    "exit": 0
+  },
+  "verdict_version": 1,
+  "verified": true
+}
