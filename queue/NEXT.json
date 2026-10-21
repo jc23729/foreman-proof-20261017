@@ -1,0 +1,10 @@
+{
+  "candidates": [
+    {"id": "C1", "title": "Add a --json output flag to report_cli.py",
+     "why": "machine-readable output is the next integration step"},
+    {"id": "C2", "title": "Render the summary as a Markdown table",
+     "why": "human-readable reporting for chat surfaces"},
+    {"id": "C3", "title": "Accept CSV input as well as JSON",
+     "why": "widens input formats without changing the summarizer"}
+  ]
+}
