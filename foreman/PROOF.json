@@ -185,5 +185,44 @@
     "scheduled_check_tested": false,
     "restart_tested": false,
     "limitation": "No separate scheduler or restart operation was exercised or claimed; only the protocol-authorized state feed and git handoffs were used."
+  },
+  "final_control_plane_confirmation": {
+    "generated_at": "2026-10-21T08:05:33.498194Z",
+    "gates": {
+      "decision_valid": true,
+      "goal_received": true,
+      "job_a_accepted_by_control_plane": true,
+      "job_a_dispatched": true,
+      "job_a_verified_by_foreman": true,
+      "job_b_accepted_by_control_plane": true,
+      "job_b_auto_dispatched": true,
+      "job_b_verified_by_foreman": true,
+      "plan_valid": true,
+      "report_present": true
+    },
+    "report": {
+      "completed": true,
+      "goal_id": "goal-autonomy-20261021",
+      "jobs": {
+        "A": "ACCEPTED",
+        "B": "ACCEPTED"
+      },
+      "report_version": 1,
+      "summary": "codex-contabo completed A then automatically dispatched B after the foreman\u2019s pushed A verdict; both exact job IDs and source hashes were independently verified and all 9 acceptance tests passed."
+    },
+    "decision": {
+      "chosen": "C1",
+      "decided_at": "2026-10-21T08:05:28.054152Z",
+      "decision_version": 1,
+      "reason": "Add the --json output flag next: machine-readable output enables downstream integration while reusing the independently accepted summarizer and existing JSON input, without expanding input-format scope."
+    },
+    "chain": {
+      "msg": "ok",
+      "ok": true,
+      "receipts": 116
+    },
+    "repo_sync_ok": true,
+    "report_commit": "4515dcfaa3756978c3e4e2de447a3111926d5453",
+    "decision_commit": "c258fea97590b1b0865babadbf2a2bc8314cad3e"
   }
 }
