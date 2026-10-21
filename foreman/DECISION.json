@@ -1,6 +1,0 @@
-{
-  "chosen": "C1",
-  "decided_at": "2026-10-21T07:53:50.146817Z",
-  "decision_version": 1,
-  "reason": "Machine-readable output is the smallest step that extends the CLI."
-}
