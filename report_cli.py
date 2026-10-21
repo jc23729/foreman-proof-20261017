@@ -14,6 +14,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", required=True, help="JSON file containing jobs")
     parser.add_argument("--json", action="store_true", help="emit a JSON summary")
+    parser.add_argument("--format", choices=("text", "markdown"), default="text",
+                        help="output format (default: text)")
     args = parser.parse_args()
 
     try:
@@ -34,11 +36,19 @@ def main():
         return 0
 
     print("# Job Status")
-    print(
-        f"Total: {summary['total']} | Done: {summary['done']} | "
-        f"Running: {summary['running']} | Queued: {summary['queued']} | "
-        f"Blocked: {summary['blocked']}"
-    )
+    if args.format == "markdown":
+        print()
+        print("| Metric | Count |")
+        print("| --- | --- |")
+        for key in ("total", "done", "running", "queued", "blocked"):
+            print(f"| {key.capitalize()} | {summary[key]} |")
+        print()
+    else:
+        print(
+            f"Total: {summary['total']} | Done: {summary['done']} | "
+            f"Running: {summary['running']} | Queued: {summary['queued']} | "
+            f"Blocked: {summary['blocked']}"
+        )
     next_job = summary["next_queued"]
     print(f"Next: {next_job if next_job is not None else 'none'}")
     return 0
