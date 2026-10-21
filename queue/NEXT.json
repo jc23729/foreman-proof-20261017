@@ -3,6 +3,8 @@
     {"id": "C2", "title": "Render the summary as a Markdown table",
      "why": "human-readable reporting for chat surfaces"},
     {"id": "C3", "title": "Accept CSV input as well as JSON",
-     "why": "widens input formats without changing the summarizer"}
+     "why": "widens input formats without changing the summarizer"},
+    {"id": "C4", "title": "Add a --quiet mode that prints only the next job id",
+     "why": "makes the CLI usable from scripts and health checks"}
   ]
 }
