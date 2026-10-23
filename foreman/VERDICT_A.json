@@ -1,0 +1,12 @@
+{
+  "verdict_version": 1,
+  "job": "A",
+  "job_id": "job-17e399e6-c581-4270-9e45-cd1332415c28",
+  "verified": true,
+  "sha256": "16bc6d468f0824aed41644b611362f669f911a49613c741f7910e4f70094bca0",
+  "tests": {
+    "command": "python3 -m pytest tests/test_report_quiet.py tests/test_report_cli.py -q",
+    "exit": 0
+  },
+  "checked_at": "2026-10-23T03:20:08Z"
+}
