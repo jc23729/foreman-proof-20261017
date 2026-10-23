@@ -1,6 +1,6 @@
 {
   "plan_version": 1,
-  "goal_id": "goal-autonomy-c2",
+  "goal_id": "goal-autonomy-c4",
   "foreman": "devin-cloud",
   "job_a": {
     "id": "A",
@@ -8,12 +8,9 @@
     "worker": "codex-contabo",
     "spec": {
       "expected_file": "report_cli.py",
-      "test_path": "tests/test_report_markdown.py",
-      "also_test": [
-        "tests/test_report_json.py",
-        "tests/test_report_cli.py"
-      ],
-      "task": "Implement CONTRACTS/C2.md in report_cli.py only. Add --format {text,markdown}, default text. For markdown emit exactly '# Job Status', a blank line, '| Metric | Count |', '| --- | --- |', then Total, Done, Running, Queued, Blocked rows in that order with actual summary counts, a blank line, then 'Next: <highest-priority queued id or none>', with a final newline. Preserve current text output byte-for-byte with --format text or no flag and preserve --json behavior from C1. Handle invalid input with nonzero exit and stderr as before. No new third-party dependencies and no runtime file writes. job_report.py must remain byte-identical; do not modify tests/ or queue/NEXT.json. Run python3 -m pytest tests/test_report_markdown.py tests/test_report_json.py tests/test_report_cli.py -q. Return only the authorized product file."
+      "test_path": "tests/test_report_quiet.py",
+      "also_test": ["tests/test_report_cli.py"],
+      "task": "Implement CONTRACTS/C4.md by changing only report_cli.py on autonomy/c3. Add --quiet so valid input prints exactly the next queued job ID and a newline, or none and a newline when no job is queued, exits 0, and prints nothing else on stdout. Quiet must take precedence over --json and other output formatting. Malformed input must still exit nonzero with a short stderr message. Preserve all existing behavior without --quiet, including JSON, CSV, markdown, and default text output. Continue using summarize_jobs from unchanged job_report.py. Do not change tests/, queue/NEXT.json, job_report.py, or any other file; add no third-party dependencies and perform no runtime file writes. Run python3 -m pytest tests/test_report_quiet.py tests/test_report_cli.py -q. Return the complete accepted report_cli.py bytes and its SHA-256 through the executor feed."
     }
   },
   "job_b": null,

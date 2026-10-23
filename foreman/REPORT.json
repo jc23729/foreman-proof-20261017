@@ -1,9 +1,21 @@
 {
   "report_version": 1,
-  "goal_id": "goal-autonomy-c2",
+  "goal_id": "goal-autonomy-c4",
   "completed": true,
   "jobs": {
     "A": "ACCEPTED"
   },
-  "summary": "Independently verified and pushed the accepted C2 Markdown CLI artifact with matching SHA-256 and all six acceptance/regression tests passing."
+  "summary": "The authorized worker's quiet-mode change was independently accepted with matching SHA-256, all 5 contract/regression tests, all 19 repository tests, and 7 supplemental CLI checks passing, while job_report.py, tests/, and queue/NEXT.json remained unchanged.",
+  "product_commit": "2486ffb",
+  "product_sha256": "16bc6d468f0824aed41644b611362f669f911a49613c741f7910e4f70094bca0",
+  "verification": {
+    "contract_command": "python3 -m pytest tests/test_report_quiet.py tests/test_report_cli.py -q",
+    "contract_exit": 0,
+    "regression_command": "python3 -m pytest tests/ -q",
+    "regression_exit": 0,
+    "supplemental_checks": "Empty queues print none; quiet overrides JSON and markdown; malformed input exits nonzero with one stderr line; no runtime repository file writes were observed.",
+    "python": "/home/ubuntu/.pyenv/versions/3.12.13/bin/python3",
+    "lint": "Existing baseline Ruff E402 at report_cli.py:11 remains; reproduced on the original branch source.",
+    "types": "Existing baseline mypy call-overload at job_report.py:14 remains; reproduced on the original byte-identical source."
+  }
 }
