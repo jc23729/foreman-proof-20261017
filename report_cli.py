@@ -15,6 +15,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", required=True, help="JSON or CSV file containing jobs")
     parser.add_argument("--json", action="store_true", help="emit a JSON summary")
+    parser.add_argument("--quiet", action="store_true", help="emit only the next queued job ID")
     parser.add_argument("--format", choices=("text", "markdown"), default="text",
                         help="output format (default: text)")
     args = parser.parse_args()
@@ -46,6 +47,11 @@ def main():
     except (OSError, UnicodeError, ValueError, RecursionError, csv.Error) as exc:
         print(f"Error: {exc}", file=sys.stderr)
         return 1
+
+    if args.quiet:
+        next_job = summary["next_queued"]
+        print(next_job if next_job is not None else "none")
+        return 0
 
     if args.json:
         print(json.dumps({
