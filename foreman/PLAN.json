@@ -1,0 +1,19 @@
+{
+  "plan_version": 1,
+  "goal_id": "goal-autonomy-c3",
+  "foreman": "devin-cloud",
+  "job_a": {
+    "id": "A",
+    "kind": "repo_task",
+    "worker": "codex-contabo",
+    "spec": {
+      "expected_file": "report_cli.py",
+      "test_path": "tests/test_report_csv.py",
+      "also_test": ["tests/test_report_cli.py"],
+      "task": "Implement CONTRACTS/C3.md on autonomy/c3. Change only report_cli.py; leave job_report.py byte-identical and never modify tests/ or queue/NEXT.json. Accept --input files with a .csv suffix using the standard library csv module, reading id,state,priority header fields and converting priority to an integer before calling the existing summarize_jobs. CSV text output must match JSON text output for tests/fixtures/jobs.csv, including Next: J-02. Preserve existing JSON input, --json output and --format markdown output, and support both output options for CSV input. Reject malformed CSV, including a missing header, unknown state and non-integer priority, with a nonzero exit and a short stderr message. Do not add third-party dependencies or write files at runtime. Run python3 -m pytest tests/test_report_csv.py tests/test_report_cli.py -q and return the complete accepted report_cli.py bytes and their SHA-256 through the executor feed."
+    }
+  },
+  "job_b": null,
+  "launch_b_when": "verdict_a_verified",
+  "choose_next_from": "queue/NEXT.json"
+}
