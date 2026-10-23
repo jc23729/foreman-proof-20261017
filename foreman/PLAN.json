@@ -1,0 +1,19 @@
+{
+  "plan_version": 1,
+  "goal_id": "goal-autonomy-c4",
+  "foreman": "devin-cloud",
+  "job_a": {
+    "id": "A",
+    "kind": "repo_task",
+    "worker": "codex-contabo",
+    "spec": {
+      "expected_file": "report_cli.py",
+      "test_path": "tests/test_report_quiet.py",
+      "also_test": ["tests/test_report_cli.py"],
+      "task": "Implement CONTRACTS/C4.md by changing only report_cli.py on autonomy/c3. Add --quiet so valid input prints exactly the next queued job ID and a newline, or none and a newline when no job is queued, exits 0, and prints nothing else on stdout. Quiet must take precedence over --json and other output formatting. Malformed input must still exit nonzero with a short stderr message. Preserve all existing behavior without --quiet, including JSON, CSV, markdown, and default text output. Continue using summarize_jobs from unchanged job_report.py. Do not change tests/, queue/NEXT.json, job_report.py, or any other file; add no third-party dependencies and perform no runtime file writes. Run python3 -m pytest tests/test_report_quiet.py tests/test_report_cli.py -q. Return the complete accepted report_cli.py bytes and its SHA-256 through the executor feed."
+    }
+  },
+  "job_b": null,
+  "launch_b_when": "verdict_a_verified",
+  "choose_next_from": "queue/NEXT.json"
+}
