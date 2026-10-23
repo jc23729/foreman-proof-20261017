@@ -1,9 +1,0 @@
-{
-  "report_version": 1,
-  "goal_id": "goal-autonomy-c3",
-  "completed": true,
-  "jobs": {
-    "A": "ACCEPTED"
-  },
-  "summary": "Independently verified and pushed the codex-contabo CSV implementation: all five contract tests passed, SHA-256 matched, output and malformed-input checks passed, and job_report.py, tests/ and queue/NEXT.json remained unchanged; lint and type checks retain only their pre-existing baseline errors."
-}

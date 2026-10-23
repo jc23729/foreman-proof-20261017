@@ -1,7 +1,0 @@
-{
-  "decision_version": 1,
-  "goal_id": "goal-autonomy-c3",
-  "chosen": "C4",
-  "reason": "C4 is the sole candidate in queue/NEXT.json and adds a --quiet mode so scripts and health checks can consume only the next job id after CSV input support.",
-  "decided_at": "2026-10-23T03:13:57Z"
-}
