@@ -1,0 +1,7 @@
+{
+  "decision_version": 1,
+  "goal_id": "goal-autonomy-c4",
+  "chosen": "C4",
+  "reason": "C4 is the only candidate in queue/NEXT.json and provides quiet output for scripts and health checks; this run has delivered it, and the queue is preserved unchanged as required.",
+  "decided_at": "2026-10-23T03:20:41Z"
+}
